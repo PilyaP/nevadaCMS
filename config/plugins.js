@@ -23,6 +23,10 @@ module.exports = {
         path: "/documentation",
       },
       servers: [
+        {
+          url: "https://nevadacms.onrender.com/api",
+          description: "Prodaction server",
+        },
         { url: "http://localhost:1337/api", description: "Development server" },
       ],
       security: [{ bearerAuth: [] }],

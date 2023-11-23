@@ -675,6 +675,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     companyWebsite: Attribute.String;
     message: Attribute.Text;
     businessDirection: Attribute.String & Attribute.Required;
+    orders: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::order.order'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -725,6 +730,43 @@ export interface ApiCompanyContactCompanyContact extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::company-contact.company-contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOrderOrder extends Schema.CollectionType {
+  collectionName: 'orders';
+  info: {
+    singularName: 'order';
+    pluralName: 'orders';
+    displayName: 'order';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    businesplan: Attribute.Enumeration<['bts', 'npm', 'srt', 'sdff']> &
+      Attribute.Required;
+    users_permissions_user: Attribute.Relation<
+      'api::order.order',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::order.order',
       'oneToOne',
       'admin::user'
     > &
@@ -886,6 +928,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::company-contact.company-contact': ApiCompanyContactCompanyContact;
+      'api::order.order': ApiOrderOrder;
       'api::price-container.price-container': ApiPriceContainerPriceContainer;
       'api::price-packing.price-packing': ApiPricePackingPricePacking;
       'api::price-product.price-product': ApiPriceProductPriceProduct;
