@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-11-23T21:32:42.093Z"
+    "x-generation-date": "2023-11-23T22:49:58.105Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -555,22 +555,14 @@
         "properties": {
           "data": {
             "required": [
-              "title",
-              "businesplan"
+              "companyName",
+              "orderType",
+              "warehouseAddress"
             ],
             "type": "object",
             "properties": {
-              "title": {
+              "companyName": {
                 "type": "string"
-              },
-              "businesplan": {
-                "type": "string",
-                "enum": [
-                  "bts",
-                  "npm",
-                  "srt",
-                  "sdff"
-                ]
               },
               "users_permissions_user": {
                 "oneOf": [
@@ -582,6 +574,49 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "orderType": {
+                "type": "string",
+                "enum": [
+                  "inbound",
+                  "removal"
+                ]
+              },
+              "warehouseAddress": {
+                "type": "string",
+                "enum": [
+                  "address1",
+                  "address2"
+                ]
+              },
+              "tracker": {
+                "type": "string"
+              },
+              "totalPrice": {
+                "type": "number",
+                "format": "float"
+              },
+              "accept": {
+                "type": "boolean"
+              },
+              "rejectionReason": {
+                "type": "string"
+              },
+              "orderDate": {
+                "type": "string",
+                "format": "date"
+              },
+              "comments": {
+                "type": "string"
+              },
+              "totalMasterBoxes": {
+                "type": "integer"
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/ProductsProductsComponent"
+                }
               }
             }
           }
@@ -636,21 +671,13 @@
       "Order": {
         "type": "object",
         "required": [
-          "title",
-          "businesplan"
+          "companyName",
+          "orderType",
+          "warehouseAddress"
         ],
         "properties": {
-          "title": {
+          "companyName": {
             "type": "string"
-          },
-          "businesplan": {
-            "type": "string",
-            "enum": [
-              "bts",
-              "npm",
-              "srt",
-              "sdff"
-            ]
           },
           "users_permissions_user": {
             "type": "object",
@@ -1139,17 +1166,8 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "title": {
+                                    "companyName": {
                                       "type": "string"
-                                    },
-                                    "businesplan": {
-                                      "type": "string",
-                                      "enum": [
-                                        "bts",
-                                        "npm",
-                                        "srt",
-                                        "sdff"
-                                      ]
                                     },
                                     "users_permissions_user": {
                                       "type": "object",
@@ -1163,6 +1181,92 @@
                                             "attributes": {
                                               "type": "object",
                                               "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "orderType": {
+                                      "type": "string",
+                                      "enum": [
+                                        "inbound",
+                                        "removal"
+                                      ]
+                                    },
+                                    "warehouseAddress": {
+                                      "type": "string",
+                                      "enum": [
+                                        "address1",
+                                        "address2"
+                                      ]
+                                    },
+                                    "tracker": {
+                                      "type": "string"
+                                    },
+                                    "totalPrice": {
+                                      "type": "number",
+                                      "format": "float"
+                                    },
+                                    "accept": {
+                                      "type": "boolean"
+                                    },
+                                    "rejectionReason": {
+                                      "type": "string"
+                                    },
+                                    "orderDate": {
+                                      "type": "string",
+                                      "format": "date"
+                                    },
+                                    "comments": {
+                                      "type": "string"
+                                    },
+                                    "totalMasterBoxes": {
+                                      "type": "integer"
+                                    },
+                                    "products": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "number"
+                                          },
+                                          "productDescription": {
+                                            "type": "string"
+                                          },
+                                          "expectedQty": {
+                                            "type": "integer"
+                                          },
+                                          "qtyInMasterBox": {
+                                            "type": "integer"
+                                          },
+                                          "idAsin": {
+                                            "type": "string"
+                                          },
+                                          "features": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "HazMat": {
+                                                "type": "boolean"
+                                              },
+                                              "Fragile": {
+                                                "type": "boolean"
+                                              },
+                                              "Oversize": {
+                                                "type": "boolean"
+                                              },
+                                              "Other": {
+                                                "type": "boolean"
+                                              },
+                                              "otherFeatureDetails": {
+                                                "type": "string"
+                                              },
+                                              "renderedOtherDetails": {
+                                                "type": "string"
+                                              }
                                             }
                                           }
                                         }
@@ -1278,6 +1382,49 @@
               }
             }
           },
+          "orderType": {
+            "type": "string",
+            "enum": [
+              "inbound",
+              "removal"
+            ]
+          },
+          "warehouseAddress": {
+            "type": "string",
+            "enum": [
+              "address1",
+              "address2"
+            ]
+          },
+          "tracker": {
+            "type": "string"
+          },
+          "totalPrice": {
+            "type": "number",
+            "format": "float"
+          },
+          "accept": {
+            "type": "boolean"
+          },
+          "rejectionReason": {
+            "type": "string"
+          },
+          "orderDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "comments": {
+            "type": "string"
+          },
+          "totalMasterBoxes": {
+            "type": "integer"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductsProductsComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -1345,6 +1492,52 @@
           },
           "meta": {
             "type": "object"
+          }
+        }
+      },
+      "ProductsProductsComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "productDescription": {
+            "type": "string"
+          },
+          "expectedQty": {
+            "type": "integer"
+          },
+          "qtyInMasterBox": {
+            "type": "integer"
+          },
+          "idAsin": {
+            "type": "string"
+          },
+          "features": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "HazMat": {
+                "type": "boolean"
+              },
+              "Fragile": {
+                "type": "boolean"
+              },
+              "Oversize": {
+                "type": "boolean"
+              },
+              "Other": {
+                "type": "boolean"
+              },
+              "otherFeatureDetails": {
+                "type": "string"
+              },
+              "renderedOtherDetails": {
+                "type": "string"
+              }
+            }
           }
         }
       },

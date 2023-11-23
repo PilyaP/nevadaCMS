@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_products_products",
+  "info": {
+    "displayName": "products",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "productDescription": {
+      "type": "string",
+      "required": true
+    },
+    "expectedQty": {
+      "type": "integer",
+      "required": true
+    },
+    "qtyInMasterBox": {
+      "type": "integer",
+      "required": true
+    },
+    "idAsin": {
+      "type": "string"
+    },
+    "features": {
+      "displayName": "features",
+      "type": "component",
+      "repeatable": false,
+      "component": "products.features"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_products_features",
+  "info": {
+    "displayName": "features",
+    "icon": "train"
+  },
+  "options": {},
+  "attributes": {
+    "HazMat": {
+      "type": "boolean",
+      "default": false
+    },
+    "Fragile": {
+      "type": "boolean",
+      "default": false
+    },
+    "Oversize": {
+      "type": "boolean",
+      "default": false
+    },
+    "Other": {
+      "type": "boolean",
+      "default": false
+    },
+    "otherFeatureDetails": {
+      "type": "string"
+    },
+    "renderedOtherDetails": {
+      "type": "string"
+    }
+  }
+}

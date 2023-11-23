@@ -746,19 +746,30 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     singularName: 'order';
     pluralName: 'orders';
     displayName: 'order';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String & Attribute.Required;
-    businesplan: Attribute.Enumeration<['bts', 'npm', 'srt', 'sdff']> &
-      Attribute.Required;
+    companyName: Attribute.String & Attribute.Required;
     users_permissions_user: Attribute.Relation<
       'api::order.order',
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    orderType: Attribute.Enumeration<['inbound', 'removal']> &
+      Attribute.Required;
+    warehouseAddress: Attribute.Enumeration<['address1', 'address2']> &
+      Attribute.Required;
+    tracker: Attribute.String;
+    totalPrice: Attribute.Decimal;
+    accept: Attribute.Boolean;
+    rejectionReason: Attribute.Text;
+    orderDate: Attribute.Date;
+    comments: Attribute.Text;
+    totalMasterBoxes: Attribute.Integer;
+    products: Attribute.Component<'products.products', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
