@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-11-23T21:23:56.701Z"
+    "x-generation-date": "2023-11-23T21:32:42.093Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -1125,9 +1125,6 @@
                       "message": {
                         "type": "string"
                       },
-                      "businessDirection": {
-                        "type": "string"
-                      },
                       "orders": {
                         "type": "object",
                         "properties": {
@@ -1223,6 +1220,15 @@
                             }
                           }
                         }
+                      },
+                      "businessDirection": {
+                        "type": "string",
+                        "enum": [
+                          "FBA, FBW, Private Label",
+                          "Online arbitration",
+                          "Wholesale",
+                          "FBM"
+                        ]
                       },
                       "createdAt": {
                         "type": "string",

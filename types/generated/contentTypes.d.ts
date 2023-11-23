@@ -674,12 +674,15 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     companyName: Attribute.String;
     companyWebsite: Attribute.String;
     message: Attribute.Text;
-    businessDirection: Attribute.String & Attribute.Required;
     orders: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
       'api::order.order'
     >;
+    businessDirection: Attribute.Enumeration<
+      ['FBA, FBW, Private Label', 'Online arbitration', 'Wholesale', 'FBM']
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

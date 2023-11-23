@@ -86,8 +86,20 @@
     "message": {
       "type": "text"
     },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "users_permissions_user"
+    },
     "businessDirection": {
-      "type": "string",
+      "type": "enumeration",
+      "enum": [
+        "FBA, FBW, Private Label",
+        "Online arbitration",
+        "Wholesale",
+        "FBM"
+      ],
       "required": true
     }
   }
