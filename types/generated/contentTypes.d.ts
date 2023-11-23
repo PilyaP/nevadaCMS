@@ -673,15 +673,8 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       }>;
     companyName: Attribute.String;
     companyWebsite: Attribute.String;
-    amazonSupportSFP: Attribute.Boolean & Attribute.DefaultTo<false>;
-    amazonSupportFBA: Attribute.Boolean & Attribute.DefaultTo<false>;
-    freightForwarding: Attribute.Boolean & Attribute.DefaultTo<false>;
-    crowdFundingFulfilment: Attribute.Boolean & Attribute.DefaultTo<false>;
-    ecommerceFulfilment: Attribute.Boolean & Attribute.DefaultTo<false>;
-    omniChannelFulfilment: Attribute.Boolean & Attribute.DefaultTo<false>;
-    subscriptionBoxFulfilment: Attribute.Boolean & Attribute.DefaultTo<false>;
-    contactCentre: Attribute.Boolean & Attribute.DefaultTo<false>;
-    valueAdd: Attribute.Boolean & Attribute.DefaultTo<false>;
+    message: Attribute.Text;
+    businessDirection: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

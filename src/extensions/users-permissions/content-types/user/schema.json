@@ -83,41 +83,12 @@
     "companyWebsite": {
       "type": "string"
     },
-    "amazonSupportSFP": {
-      "type": "boolean",
-      "default": false
+    "message": {
+      "type": "text"
     },
-    "amazonSupportFBA": {
-      "type": "boolean",
-      "default": false
-    },
-    "freightForwarding": {
-      "type": "boolean",
-      "default": false
-    },
-    "crowdFundingFulfilment": {
-      "type": "boolean",
-      "default": false
-    },
-    "ecommerceFulfilment": {
-      "type": "boolean",
-      "default": false
-    },
-    "omniChannelFulfilment": {
-      "type": "boolean",
-      "default": false
-    },
-    "subscriptionBoxFulfilment": {
-      "type": "boolean",
-      "default": false
-    },
-    "contactCentre": {
-      "type": "boolean",
-      "default": false
-    },
-    "valueAdd": {
-      "type": "boolean",
-      "default": false
+    "businessDirection": {
+      "type": "string",
+      "required": true
     }
   }
 }
