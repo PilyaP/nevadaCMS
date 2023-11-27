@@ -4,7 +4,9 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      origin: ["*"],
+      // origin: ["*"],
+      origin: ['https://nevada-frontend.vercel.app', 'http://localhost:3000'],
+       credentials: true,
     },
   },
   "strapi::poweredBy",
