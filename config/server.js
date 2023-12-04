@@ -8,9 +8,16 @@ module.exports = ({ env }) => ({
     populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
   },
   email: {
-    provider: "sendmail",
+    provider: "sendgrid",
     providerOptions: {
-      // Опции для sendmail могут быть здесь, если они вам нужны
+      host: "localhost",
+      port: 1025,
+      auth: {
+        user: "project_1",
+        pass: "secret.1",
+      },
+
+      secure: false,
     },
     settings: {
       defaultFrom: "info@ppcwarehouses.com",
