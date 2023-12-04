@@ -33,13 +33,24 @@
 //     },
 //   },
 // };
-module.exports = ({ env }) => ({
-  email: {
-    provider: "nodemailer",
-    providerOptions: {
-      apiKey: env("SENDGRID_API_KEY"),
-    },
+// module.exports = ({ env }) => ({
+//   email: {
+//     provider: "nodemailer",
+//     providerOptions: {
+//       apiKey: env("SENDGRID_API_KEY"),
+//     },
 
+//     settings: {
+//       defaultFrom: "info@ppcwarehouses.com",
+//       defaultReplyTo: "info@ppcwarehouses.com",
+//     },
+//   },
+//   // ... другие плагины
+// });
+module.exports = ({ env }) => ({
+  // ... другие плагины
+  email: {
+    provider: "sendmail",
     settings: {
       defaultFrom: "info@ppcwarehouses.com",
       defaultReplyTo: "info@ppcwarehouses.com",
