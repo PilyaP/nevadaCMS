@@ -8,18 +8,14 @@ module.exports = ({ env }) => ({
     populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
   },
   email: {
-    provider: "sendmail", //
+    provider: "sendmail",
     providerOptions: {
-      host: env("EMAIL_SMTP_HOST"), // SMTP Host
-      port: env.int("EMAIL_SMTP_PORT"), // SMTP Port
-      auth: {
-        user: env("EMAIL_SMTP_USER"),
-        pass: env("EMAIL_SMTP_PASS"),
-      },
+      // Опции для sendmail могут быть здесь, если они вам нужны
     },
     settings: {
       defaultFrom: "info@ppcwarehouses.com",
       defaultReplyTo: "info@ppcwarehouses.com",
     },
   },
+  // ... другие настройки ...
 });
