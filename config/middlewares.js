@@ -8,6 +8,8 @@ module.exports = [
       origin: ["https://nevada-frontend.vercel.app", "http://localhost:3000", "*"],
        credentials: true,
     },
+
+    
   },
   "strapi::poweredBy",
   "strapi::logger",

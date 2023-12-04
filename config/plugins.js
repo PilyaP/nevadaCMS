@@ -46,7 +46,7 @@ module.exports = ({ env }) => ({
     config: {
       provider: "sendgrid",
       providerOptions: {
-        apiKey: env.array("SENDGRID_API_KEY"),
+        apiKey: env("SENDGRID_API_KEY"),
       },
       settings: {
         defaultFrom: "info@ppcwarehouses.com",
