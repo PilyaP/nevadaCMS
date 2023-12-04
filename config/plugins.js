@@ -45,11 +45,11 @@ module.exports = ({ env }) => ({
   email: {
     provider: "sendgrid",
     providerOptions: {
-      host: env("EMAIL_SMTP_HOST"),
-      port: env("EMAIL_SMTP_PORT"),
+      host: "smtp.sendgrid.net",
+      port: 587,
       auth: {
-        user: env("EMAIL_SMTP_USER"),
-        pass: env("SENDGRID_API_KEY"),
+        user: "apikey",
+        pass: "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",
       },
       secure: false,
     },
