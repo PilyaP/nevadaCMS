@@ -43,19 +43,15 @@ module.exports = ({ env }) => ({
     populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
   },
   email: {
-    provider: "sendgrid",
-    providerOptions: {
-      host: "smtp.sendgrid.net",
-      port: 587,
-      auth: {
-        user: "apikey",
-        pass: "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",
+    config: {
+      provider: "sendgrid",
+      providerOptions: {
+        apiKey: env.array("SENDGRID_API_KEY"),
       },
-      secure: false,
-    },
-    settings: {
-      defaultFrom: "info@ppcwarehouses.com",
-      defaultReplyTo: "info@ppcwarehouses.com",
+      settings: {
+        defaultFrom: "info@ppcwarehouses.com",
+        defaultReplyTo: "info@ppcwarehouses.com",
+      },
     },
   },
   // ... другие настройки ...
