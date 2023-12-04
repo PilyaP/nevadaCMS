@@ -10,7 +10,7 @@ module.exports = {
         termsOfService: false,
         contact: {
           name: "Pasha Team",
-          email: "pavlo@gmail.com",
+          email: "ppaexpert@gmail.com",
           url: "https://nevada-frontend.vercel.app/",
         },
         license: {
