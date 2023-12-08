@@ -86,12 +86,6 @@
     "message": {
       "type": "text"
     },
-    "orders": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order.order",
-      "mappedBy": "users_permissions_user"
-    },
     "businessDirection": {
       "type": "enumeration",
       "enum": [
@@ -101,6 +95,12 @@
         "FBM"
       ],
       "required": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "user_permissions_user"
     }
   }
 }
