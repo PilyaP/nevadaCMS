@@ -26,8 +26,7 @@
       "displayName": "features",
       "type": "component",
       "repeatable": false,
-      "component": "products.features",
-      "private": true
+      "component": "products.features"
     }
   }
 }

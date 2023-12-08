@@ -57,8 +57,7 @@
       "displayName": "products",
       "type": "component",
       "repeatable": true,
-      "component": "products.products",
-      "private": true
+      "component": "products.products"
     },
     "mailFor": {
       "type": "email",
