@@ -16,11 +16,6 @@
       "type": "string",
       "required": true
     },
-    "user_permissions_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
     "orderType": {
       "type": "enumeration",
       "enum": [
