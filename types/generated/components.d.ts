@@ -21,13 +21,14 @@ export interface ProductsProducts extends Schema.Component {
   info: {
     displayName: 'products';
     icon: 'grid';
+    description: '';
   };
   attributes: {
     productDescription: Attribute.String & Attribute.Required;
     expectedQty: Attribute.Integer & Attribute.Required;
     qtyInMasterBox: Attribute.Integer & Attribute.Required;
     idAsin: Attribute.String;
-    features: Attribute.Component<'products.features'>;
+    features: Attribute.Component<'products.features'> & Attribute.Private;
   };
 }
 
