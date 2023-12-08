@@ -28,7 +28,7 @@ export interface ProductsProducts extends Schema.Component {
     expectedQty: Attribute.Integer & Attribute.Required;
     qtyInMasterBox: Attribute.Integer & Attribute.Required;
     idAsin: Attribute.String;
-    features: Attribute.Component<'products.features'> & Attribute.Private;
+    features: Attribute.Component<'products.features'>;
   };
 }
 
