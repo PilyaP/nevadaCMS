@@ -634,11 +634,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       ['FBA, FBW, Private Label', 'Online arbitration', 'Wholesale', 'FBM']
     > &
       Attribute.Required;
-    orders: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::order.order'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -755,7 +750,7 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     companyName: Attribute.String & Attribute.Required;
     user_permissions_user: Attribute.Relation<
       'api::order.order',
-      'manyToOne',
+      'oneToOne',
       'plugin::users-permissions.user'
     >;
     orderType: Attribute.Enumeration<['inbound', 'removal']> &

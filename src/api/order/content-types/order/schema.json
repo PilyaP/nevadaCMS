@@ -18,9 +18,8 @@
     },
     "user_permissions_user": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "orders"
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
     },
     "orderType": {
       "type": "enumeration",
