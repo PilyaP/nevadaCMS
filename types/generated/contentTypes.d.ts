@@ -764,7 +764,8 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     orderDate: Attribute.Date;
     comments: Attribute.Text;
     totalMasterBoxes: Attribute.Integer;
-    products: Attribute.Component<'products.products', true>;
+    products: Attribute.Component<'products.products', true> &
+      Attribute.Private;
     mailFor: Attribute.Email & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
