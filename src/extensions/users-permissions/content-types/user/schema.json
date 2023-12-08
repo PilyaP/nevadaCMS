@@ -95,12 +95,6 @@
         "FBM"
       ],
       "required": true
-    },
-    "orders": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order.order",
-      "mappedBy": "user_permissions_user"
     }
   }
 }
