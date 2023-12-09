@@ -61,7 +61,7 @@
     },
     "mailFor": {
       "type": "email",
-      "unique": true,
+      "unique": false,
       "required": true
     },
     "user": {

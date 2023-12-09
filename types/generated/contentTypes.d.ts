@@ -765,7 +765,7 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     comments: Attribute.Text;
     totalMasterBoxes: Attribute.Integer;
     products: Attribute.Component<'products.products', true>;
-    mailFor: Attribute.Email & Attribute.Required & Attribute.Unique;
+    mailFor: Attribute.Email & Attribute.Required;
     user: Attribute.Relation<
       'api::order.order',
       'manyToOne',
