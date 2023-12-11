@@ -55,11 +55,11 @@ module.exports = ({ env }) => ({
     },
 
   },
-// io:{
-//   enabled: true,
-//   config:{
-//     contentTypes: ['api::order.order'],
-//   }
-// }
+io:{
+  enabled: true,
+  config:{
+    contentTypes: ['api::order.order'],
+  }
+ }
   // ... другие настройки ...
 });
