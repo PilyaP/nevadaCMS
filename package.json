@@ -20,7 +20,6 @@
     "sendgrid": "^5.2.3",
     "sendmail": "^1.6.1",
     "sharp": "^0.32.6",
-    "socket.io-client": "^4.7.2",
     "strapi-plugin-io": "^2.0.4"
   },
   "author": {
