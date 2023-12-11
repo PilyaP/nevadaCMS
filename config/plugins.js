@@ -53,13 +53,7 @@ module.exports = ({ env }) => ({
         defaultReplyTo: "info@ppcwarehouses.com",
       },
     },
-
   },
-io:{
-  enabled: true,
-  config:{
-    contentTypes: ['api::order.order'],
-  }
-}
+
   // ... другие настройки ...
 });
