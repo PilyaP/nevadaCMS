@@ -19,8 +19,8 @@
     "pg": "8.8.0",
     "sendgrid": "^5.2.3",
     "sendmail": "^1.6.1",
-    "sharp": "^0.32.6",
-    "strapi-plugin-io": "^2.0.4"
+    "sharp": "^0.32.6"
+
   },
   "author": {
     "name": "A Strapi developer"
