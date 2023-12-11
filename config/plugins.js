@@ -53,16 +53,13 @@ module.exports = ({ env }) => ({
         defaultReplyTo: "info@ppcwarehouses.com",
       },
     },
-  },
-// "users-permissions":
-// {
-//   config:{
-//     jwt:{expiresIn: '28d'},
-//     register:{
-//       allowedFields: ['nickname']
-//     },
 
-//   }
-// }
+  },
+io:{
+  enabled: true,
+  config:{
+    contentTypes: ['api::order.order'],
+  }
+}
   // ... другие настройки ...
 });
