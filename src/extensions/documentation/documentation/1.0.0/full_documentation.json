@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-12-10T19:55:51.386Z"
+    "x-generation-date": "2023-12-12T21:21:41.754Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -558,7 +558,8 @@
               "companyName",
               "orderType",
               "warehouseAddress",
-              "mailFor"
+              "mailFor",
+              "customId"
             ],
             "type": "object",
             "properties": {
@@ -622,6 +623,12 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "uuid": {
+                "type": "string"
+              },
+              "customId": {
+                "type": "string"
               }
             }
           }
@@ -679,7 +686,8 @@
           "companyName",
           "orderType",
           "warehouseAddress",
-          "mailFor"
+          "mailFor",
+          "customId"
         ],
         "properties": {
           "companyName": {
@@ -1338,6 +1346,12 @@
                                         }
                                       }
                                     },
+                                    "uuid": {
+                                      "type": "string"
+                                    },
+                                    "customId": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -1438,6 +1452,12 @@
                 }
               }
             }
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "customId": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
