@@ -12,6 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "customId": {
+      "type": "string",
+      "configurable": false,
+      "required": true,
+      "unique": true
+    },
     "companyName": {
       "type": "string",
       "required": true
@@ -70,11 +76,14 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "orders"
     },
-    "customId": {
-      "type": "string",
-      "configurable": false,
-      "required": true,
-      "unique": true
+    "orderStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Order created",
+        "Label created",
+        "Out for Delivery",
+        "Delivered"
+      ]
     }
   }
 }
