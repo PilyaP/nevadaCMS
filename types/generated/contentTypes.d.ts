@@ -752,6 +752,7 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
+    customId: Attribute.String & Attribute.Required & Attribute.Unique;
     companyName: Attribute.String & Attribute.Required;
     orderType: Attribute.Enumeration<['inbound', 'removal']> &
       Attribute.Required;
@@ -771,8 +772,9 @@ export interface ApiOrderOrder extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
-    uuid: Attribute.UID & Attribute.CustomField<'plugin::field-uuid.uuid'>;
-    customId: Attribute.String & Attribute.Required & Attribute.Unique;
+    orderStatus: Attribute.Enumeration<
+      ['Order created', 'Label created', 'Out for Delivery', 'Delivered']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

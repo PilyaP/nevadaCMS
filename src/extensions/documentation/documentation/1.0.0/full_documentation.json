@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-12-12T21:21:41.754Z"
+    "x-generation-date": "2024-01-17T20:04:16.658Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -555,14 +555,17 @@
         "properties": {
           "data": {
             "required": [
+              "customId",
               "companyName",
               "orderType",
               "warehouseAddress",
-              "mailFor",
-              "customId"
+              "mailFor"
             ],
             "type": "object",
             "properties": {
+              "customId": {
+                "type": "string"
+              },
               "companyName": {
                 "type": "string"
               },
@@ -624,11 +627,14 @@
                 ],
                 "example": "string or id"
               },
-              "uuid": {
-                "type": "string"
-              },
-              "customId": {
-                "type": "string"
+              "orderStatus": {
+                "type": "string",
+                "enum": [
+                  "Order created",
+                  "Label created",
+                  "Out for Delivery",
+                  "Delivered"
+                ]
               }
             }
           }
@@ -683,13 +689,16 @@
       "Order": {
         "type": "object",
         "required": [
+          "customId",
           "companyName",
           "orderType",
           "warehouseAddress",
-          "mailFor",
-          "customId"
+          "mailFor"
         ],
         "properties": {
+          "customId": {
+            "type": "string"
+          },
           "companyName": {
             "type": "string"
           },
@@ -1236,6 +1245,9 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
+                                    "customId": {
+                                      "type": "string"
+                                    },
                                     "companyName": {
                                       "type": "string"
                                     },
@@ -1346,11 +1358,14 @@
                                         }
                                       }
                                     },
-                                    "uuid": {
-                                      "type": "string"
-                                    },
-                                    "customId": {
-                                      "type": "string"
+                                    "orderStatus": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Order created",
+                                        "Label created",
+                                        "Out for Delivery",
+                                        "Delivered"
+                                      ]
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -1453,11 +1468,14 @@
               }
             }
           },
-          "uuid": {
-            "type": "string"
-          },
-          "customId": {
-            "type": "string"
+          "orderStatus": {
+            "type": "string",
+            "enum": [
+              "Order created",
+              "Label created",
+              "Out for Delivery",
+              "Delivered"
+            ]
           },
           "createdAt": {
             "type": "string",
