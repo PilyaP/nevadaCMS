@@ -83,7 +83,8 @@
         "Label created",
         "Out for Delivery",
         "Delivered"
-      ]
+      ],
+      "required": false
     }
   }
 }
