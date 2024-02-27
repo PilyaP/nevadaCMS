@@ -10,9 +10,9 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "^4.14.4",
-    "@strapi/plugin-i18n": "4.15.0",
-    "@strapi/plugin-users-permissions": "4.15.0",
+    "@strapi/plugin-documentation": "^4.0.5",
+    "@strapi/plugin-i18n": "^4.20.2",
+    "@strapi/plugin-users-permissions": "^4.20.2",
     "@strapi/provider-email-sendgrid": "^4.15.5",
     "@strapi/strapi": "4.15.0",
     "nodemailer": "^6.9.7",
@@ -20,7 +20,6 @@
     "sendgrid": "^5.2.3",
     "sendmail": "^1.6.1",
     "sharp": "^0.32.6"
-
   },
   "author": {
     "name": "A Strapi developer"
