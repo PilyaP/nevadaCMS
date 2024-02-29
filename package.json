@@ -21,7 +21,9 @@
     "pg": "^8.11.3",
     "sendgrid": "^5.2.3",
     "sendmail": "^1.6.1",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "author": {
     "name": "A Strapi developer"
